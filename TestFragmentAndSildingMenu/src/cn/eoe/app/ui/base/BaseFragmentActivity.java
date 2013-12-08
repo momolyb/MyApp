@@ -21,5 +21,8 @@ public class BaseFragmentActivity extends FragmentActivity {
 		super.finish();
 		overridePendingTransition(R.anim.push_right_in, R.anim.push_right_out);
 	}
-	
+	protected void defaultFinish() {
+		// TODO Auto-generated method stub
+		finish();
+	}
 }
