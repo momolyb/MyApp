@@ -149,16 +149,22 @@ public class MainActivity extends BaseSlidingFragmentActivity implements
 
     private void initViewPager() {
         mBasePageAdapter = new BasePageAdapter(this);
-        mViewPager.setOffscreenPageLimit(0);
-        mViewPager.setAdapter(mBasePageAdapter);
-        mIndicator.setViewPager(mViewPager);
-        mIndicator.setOnPageChangeListener(new MyPageChangeListener());
         ArrayList<String> arrayList = new ArrayList<String>();
         for (int i = 0; i < 4; i++) {
 			
 			arrayList.add(i+"");
 		}
+        
         mBasePageAdapter.addFragment(arrayList);
+        
+        mViewPager.setOffscreenPageLimit(0);
+        mViewPager.setAdapter(mBasePageAdapter);
+        
+        mIndicator.setViewPager(mViewPager);
+        mIndicator.setOnPageChangeListener(new MyPageChangeListener());
+        mViewPager.setVisibility(View.VISIBLE);
+        mViewPager.setCurrentItem(2);
+        
     }
 
     private void initListView() {
